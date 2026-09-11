@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jugantor Foundation | Building a Brighter Tomorrow</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <header class="navbar">
+        <div class="logo">Jugantor<span>Foundation</span></div>
+        <nav class="nav-links" id="navLinks">
+            <a href="#home">Home</a>
+            
+            <!-- Activities Dropdown -->
+            <div class="dropdown">
+                <a href="#activities" class="dropdown-btn">Activities ▾</a>
+                <div class="dropdown-content">
+                    <a href="#events">Events</a>
+                    <a href="#charity-work">Charity Work</a>
+                </div>
+            </div>
+        </nav>
+        <div class="nav-actions">
+            <button class="btn donate-nav-btn" id="openDonateBtn">Donate Now</button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <span class="badge">Non-Profit Organization</span>
+            <h1>Empowering Communities, Changing Lives</h1>
+            <p>Jugantor Foundation works tirelessly to provide education, healthcare, and emergency relief to vulnerable children and families.</p>
+            <div class="hero-btns">
+                <button class="btn primary-btn" id="heroDonateBtn">Support Our Cause</button>
+                <a href="#activities" class="btn secondary-btn">Our Activities</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Stats Bar -->
+    <section class="stats-bar">
+        <div class="stat-item">
+            <h2>50,000+</h2>
+            <p>Children Educated</p>
+        </div>
+        <div class="stat-item">
+            <h2>120+</h2>
+            <p>Communities Served</p>
+        </div>
+        <div class="stat-item">
+            <h2>15,000+</h2>
+            <p>Medical Kits Delivered</p>
+        </div>
+    </section>
+
+    <!-- Activities Overview Section -->
+    <section id="activities" class="activities-wrapper">
+        
+        <!-- Part 1: Events Section -->
+        <div id="events" class="activity-section">
+            <div class="section-header">
+                <span class="section-tag">Part 1</span>
+                <h2>Upcoming & Recent Events</h2>
+                <p>Join our community gatherings, awareness campaigns, and fundraising drives.</p>
+            </div>
+            <div class="activities-grid">
+                <div class="activity-card">
+                    <div class="card-badge event-badge">Event</div>
+                    <h3>Annual Humanitarian Summit</h3>
+                    <p class="activity-date">📅 October 15, 2026</p>
+                    <p>Bringing together community leaders and volunteers to discuss sustainable community development.</p>
+                    <button class="btn card-btn" onclick="openDonateModal('Humanitarian Summit Register')">Register / Join</button>
+                </div>
+                <div class="activity-card">
+                    <div class="card-badge event-badge">Event</div>
+                    <h3>Youth Empowerment Workshop</h3>
+                    <p class="activity-date">📅 November 05, 2026</p>
+                    <p>Skill-building session for youth focus on digital literacy, leadership, and community service.</p>
+                    <button class="btn card-btn" onclick="openDonateModal('Youth Workshop Register')">Register / Join</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Part 2: Charity Work Section -->
+        <div id="charity-work" class="activity-section">
+            <div class="section-header">
+                <span class="section-tag">Part 2</span>
+                <h2>Our Charity Work</h2>
+                <p>Direct humanitarian intervention initiatives supporting families in need.</p>
+            </div>
+            <div class="activities-grid">
+                <div class="activity-card">
+                    <div class="card-badge charity-badge">Charity Work</div>
+                    <h3>Free Medical & Eye Camp</h3>
+                    <p>Providing free health checks, medicines, and eye checkups to underprivileged rural families.</p>
+                    <button class="btn card-btn" onclick="openDonateModal('Medical Camp Support')">Support Charity</button>
+                </div>
+                <div class="activity-card">
+                    <div class="card-badge charity-badge">Charity Work</div>
+                    <h3>Winter Clothes & Food Distribution</h3>
+                    <p>Distributing warm clothes, blankets, and essential food packages to homeless communities.</p>
+                    <button class="btn card-btn" onclick="openDonateModal('Winter Relief Support')">Support Charity</button>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Donation Modal -->
+    <div class="modal-overlay" id="donateModal">
+        <div class="modal-content">
+            <button class="close-btn" id="closeModalBtn">&times;</button>
+            <h3>Make a Donation</h3>
+            <p class="modal-sub">Your contribution directly transforms lives.</p>
+            <form id="donateForm">
+                <div class="form-group">
+                    <label>Select Amount ($)</label>
+                    <div class="amount-options">
+                        <button type="button" class="amount-btn active" onclick="setAmount(25)">$25</button>
+                        <button type="button" class="amount-btn" onclick="setAmount(50)">$50</button>
+                        <button type="button" class="amount-btn" onclick="setAmount(100)">$100</button>
+                    </div>
+                    <input type="number" id="customAmount" placeholder="Custom Amount" value="25" min="1">
+                </div>
+                <div class="form-group">
+                    <label for="donorName">Full Name</label>
+                    <input type="text" id="donorName" required placeholder="Jane Doe">
+                </div>
+                <div class="form-group">
+                    <label for="donorEmail">Email Address</label>
+                    <input type="email" id="donorEmail" required placeholder="jane@example.com">
+                </div>
+                <button type="submit" class="btn primary-btn submit-donate-btn">Complete Donation</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Jugantor Foundation. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
